@@ -1,0 +1,35 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npx run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npx run development -- --watch",
+        "watch-poll": "npx run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npx run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@11ty/eleventy": "^0.11.0",
+        "@braid/vue-formulate": "^2.4.3",
+        "@fullhuman/postcss-purgecss": "^1.2.0",
+        "browser-sync": "^2.24.6",
+        "browser-sync-webpack-plugin": "^2.0.1",
+        "cross-env": "^7.0",
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-loader": "^2.1.2",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-vue": "^5.2.2",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.13",
+        "postcss-units": "^1.2.1",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0",
+        "tailwindcss": "~1.7",
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11",
+        "what-input": "^5.1.1"
+    }
+}

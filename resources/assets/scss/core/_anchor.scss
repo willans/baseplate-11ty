@@ -1,0 +1,9 @@
+a {
+	@apply text-brand-red cursor-pointer underline;
+
+	&:hover {
+		[data-whatintent=keyboard] & {
+			@apply no-underline;
+		}
+	}
+}
