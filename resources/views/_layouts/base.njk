@@ -1,9 +1,14 @@
+---
+title: Baseplate
+---
+
 <!doctype html>
 <html>
 <head>
+	<title>{{ title }}</title>
 	<link rel="stylesheet" href="/compiled/css/app.css">
 </head>
 <body>
-	Home
+	{{ content | safe }}
 </body>
 </html>

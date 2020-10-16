@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/*.html
 /storage/*.key
 /vendor
 /public/compiled/
