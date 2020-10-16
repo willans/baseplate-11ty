@@ -9,6 +9,7 @@
       "files": [
         "public/compiled/css",
         "public/compiled/js",
+        "public/*.html",
         "resources/views",
         "!**/*.map"
       ],
@@ -16,7 +17,7 @@
       "notify": false,
       "open": false,
       "port": 5757,
-      "proxy": "web:80",
+      "proxy": "baseplate.dev.com:80",
       "snippetOptions": {
         "rule": {
           "match": "</body>"

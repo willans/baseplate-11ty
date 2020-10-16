@@ -15,8 +15,6 @@ import IconText from './components/common/IconText';
 import Pagination from './components/common/Pagination';
 import Placeholder from './components/common/Placeholder';
 
-Vue.filter('trans', (...args) => lang.get(...args));
-
 // Global
 Vue.component('EButton', EButton);
 Vue.component('ETable', ETable);

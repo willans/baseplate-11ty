@@ -1,13 +1,17 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npx run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npx run development -- --watch",
-        "watch-poll": "npx run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npx run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "clean": "rimraf public \"!(*.xml|*.json|*.txt).js\"",
+        "dev": "npm-run-all dev:*",
+        "dev:webpack": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+        "dev:11ty": "eleventy",
+        "watch:webpack": "yarn run dev:webpack --watch",
+        "watch:11ty": "yarn run dev:11ty --watch",
+        "watch": "npm-run-all --parallel watch:*",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+        "build": "yarn run build:webpack",
+        "build:webpack": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
+        "build:11ty": "eleventy"
     },
     "devDependencies": {
         "@11ty/eleventy": "^0.11.0",
@@ -16,6 +20,7 @@
         "browser-sync": "^2.24.6",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^7.0",
+        "del": "^6.0.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-loader": "^2.1.2",
@@ -23,11 +28,13 @@
         "eslint-plugin-vue": "^5.2.2",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
+        "npm-run-all": "^4.1.5",
         "postcss-units": "^1.2.1",
         "resolve-url-loader": "^3.1.0",
+        "rimraf": "^3.0.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
-        "tailwindcss": "~1.7",
+        "tailwindcss": "~1.8",
         "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.11",
         "what-input": "^5.1.1"
