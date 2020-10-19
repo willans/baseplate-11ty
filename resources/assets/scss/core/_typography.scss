@@ -34,12 +34,12 @@ $h--6: (
 	xl: 'xl',
 );
 
-.e-h1,
-.e-h2,
-.e-h3,
-.e-h4,
-.e-h5,
-.e-h6 {
+.x-h1,
+.x-h2,
+.x-h3,
+.x-h4,
+.x-h5,
+.x-h6 {
 	@apply font-bold font-heading leading-none;
 
 	a {
@@ -47,26 +47,26 @@ $h--6: (
 	}
 }
 
-.e-h1 {
+.x-h1 {
 	@include font-size($h--1);
 }
 
-.e-h2 {
+.x-h2 {
 	@include font-size($h--2);
 }
 
-.e-h3 {
+.x-h3 {
 	@include font-size($h--3);
 }
 
-.e-h4 {
+.x-h4 {
 	@include font-size($h--4);
 }
 
-.e-h5 {
+.x-h5 {
 	@include font-size($h--5);
 }
 
-.e-h6 {
+.x-h6 {
 	@include font-size($h--6);
 }

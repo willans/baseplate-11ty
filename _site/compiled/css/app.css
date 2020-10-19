@@ -588,16 +588,6 @@ video {
 
 /*
 
-	Map deep get
-
-	Get values from anywhere in a variable list
-
-	http://css-tricks.com/snippets/sass/deep-getset-maps/
-
-*/
-
-/*
-
 	Very simple number functions
 
 */
@@ -678,128 +668,128 @@ body {
   display: none;
 }
 
-.e-h1, .e-copy h1,
-.e-h2,
-.e-copy h2,
-.e-h3,
-.e-copy h3,
-.e-h4,
-.e-copy h4,
-.e-h5,
-.e-copy h5,
-.e-h6,
-.e-copy h6 {
+.x-h1, .x-copy h1,
+.x-h2,
+.x-copy h2,
+.x-h3,
+.x-copy h3,
+.x-h4,
+.x-copy h4,
+.x-h5,
+.x-copy h5,
+.x-h6,
+.x-copy h6 {
   font-weight: 700;
   font-family: custom-heading, Georgia, serif;
   line-height: 1;
 }
 
-.e-h1 a, .e-copy h1 a,
-.e-h2 a,
-.e-copy h2 a,
-.e-h3 a,
-.e-copy h3 a,
-.e-h4 a,
-.e-copy h4 a,
-.e-h5 a,
-.e-copy h5 a,
-.e-h6 a,
-.e-copy h6 a {
+.x-h1 a, .x-copy h1 a,
+.x-h2 a,
+.x-copy h2 a,
+.x-h3 a,
+.x-copy h3 a,
+.x-h4 a,
+.x-copy h4 a,
+.x-h5 a,
+.x-copy h5 a,
+.x-h6 a,
+.x-copy h6 a {
   font-weight: 700;
 }
 
-.e-h1, .e-copy h1 {
+.x-h1, .x-copy h1 {
   font-size: 1.875rem;
 }
 
 @media (min-width: 48em) {
-  .e-h1, .e-copy h1 {
+  .x-h1, .x-copy h1 {
     font-size: 2.25rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h1, .e-copy h1 {
+  .x-h1, .x-copy h1 {
     font-size: 2.75rem;
   }
 }
 
-.e-h2, .e-copy h2 {
+.x-h2, .x-copy h2 {
   font-size: 1.625rem;
 }
 
 @media (min-width: 48em) {
-  .e-h2, .e-copy h2 {
+  .x-h2, .x-copy h2 {
     font-size: 1.875rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h2, .e-copy h2 {
+  .x-h2, .x-copy h2 {
     font-size: 2.25rem;
   }
 }
 
-.e-h3, .e-copy h3 {
+.x-h3, .x-copy h3 {
   font-size: 1.375rem;
 }
 
 @media (min-width: 48em) {
-  .e-h3, .e-copy h3 {
+  .x-h3, .x-copy h3 {
     font-size: 1.625rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h3, .e-copy h3 {
+  .x-h3, .x-copy h3 {
     font-size: 1.875rem;
   }
 }
 
-.e-h4, .e-copy h4 {
+.x-h4, .x-copy h4 {
   font-size: 1.25rem;
 }
 
 @media (min-width: 48em) {
-  .e-h4, .e-copy h4 {
+  .x-h4, .x-copy h4 {
     font-size: 1.375rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h4, .e-copy h4 {
+  .x-h4, .x-copy h4 {
     font-size: 1.625rem;
   }
 }
 
-.e-h5, .e-copy h5 {
+.x-h5, .x-copy h5 {
   font-size: 1.125rem;
 }
 
 @media (min-width: 48em) {
-  .e-h5, .e-copy h5 {
+  .x-h5, .x-copy h5 {
     font-size: 1.25rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h5, .e-copy h5 {
+  .x-h5, .x-copy h5 {
     font-size: 1.375rem;
   }
 }
 
-.e-h6, .e-copy h6 {
+.x-h6, .x-copy h6 {
   font-size: 1rem;
 }
 
 @media (min-width: 48em) {
-  .e-h6, .e-copy h6 {
+  .x-h6, .x-copy h6 {
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 78em) {
-  .e-h6, .e-copy h6 {
+  .x-h6, .x-copy h6 {
     font-size: 1.25rem;
   }
 }
@@ -820,19 +810,19 @@ button:focus {
   outline: 0;
 }
 
-.e-input::-moz-placeholder {
+.x-input::-moz-placeholder {
   --text-opacity: 1;
   color: #aaa;
   color: rgba(170, 170, 170, var(--text-opacity));
 }
 
-.e-input:-ms-input-placeholder {
+.x-input:-ms-input-placeholder {
   --text-opacity: 1;
   color: #aaa;
   color: rgba(170, 170, 170, var(--text-opacity));
 }
 
-.e-input::placeholder {
+.x-input::placeholder {
   --text-opacity: 1;
   color: #aaa;
   color: rgba(170, 170, 170, var(--text-opacity));
@@ -842,85 +832,57 @@ select::-ms-expand {
   display: none;
 }
 
-.e-container {
+.x-container {
   max-width: 87.5rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  position: relative;
 }
 
-@media (min-width: 48em) {
-  .e-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 78em) {
-  .e-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-.e-copy {
+.x-copy {
   max-width: 35em;
 }
 
-.e-copy > * {
+.x-copy > * {
   margin-top: 1em;
 }
 
-.e-copy > *:first-child {
+.x-copy > *:first-child {
   margin-top: 0;
 }
 
-.e-copy ol,
-.e-copy ul {
+.x-copy ol,
+.x-copy ul {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
 
-.e-copy ol > li,
-.e-copy ul > li {
+.x-copy ol > li,
+.x-copy ul > li {
   margin-top: 1em;
 }
 
-.e-copy ol > li:first-child,
-.e-copy ul > li:first-child {
+.x-copy ol > li:first-child,
+.x-copy ul > li:first-child {
   margin-top: 0;
 }
 
-.e-copy ol {
+.x-copy ol {
   list-style-type: decimal;
 }
 
-.e-copy ul {
+.x-copy ul {
   list-style-type: disc;
 }
 
-.e-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -1.25rem;
-}
-
-.e-grid__item {
-  flex-shrink: 0;
-  position: relative;
-  width: 100%;
-  padding-left: 1.25rem;
-}
-
-.e-placeholder {
+.x-placeholder {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
 }
 
-.e-placeholder > * {
+.x-placeholder > * {
   position: absolute;
   top: 0;
   left: 0;
@@ -13965,100 +13927,6 @@ select::-ms-expand {
 .animate-bounce {
   -webkit-animation: bounce 1s infinite;
   animation: bounce 1s infinite;
-}
-
-@media print {
-  *,
-*:before,
-*:after,
-*:first-letter,
-p:first-line,
-div:first-line,
-blockquote:first-line,
-li:first-line {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster:
-    http://www.sanbeiji.com/archives/953 */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a {
-    page-break-inside: avoid;
-  }
-
-  a,
-a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-
-  a[href^="#"]:after,
-a[href^="javascript:"]:after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-blockquote,
-table {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-img {
-    page-break-inside: avoid;
-  }
-
-  p,
-h2,
-h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-img {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-
-  ul,
-ol,
-dl {
-    page-break-before: avoid;
-  }
 }
 
 @media (min-width: 23.4375em) {
