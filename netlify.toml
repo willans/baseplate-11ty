@@ -1,0 +1,5 @@
+[build]
+
+command = "yarn run prod"
+publish = "_site"
+environment = { PHP_VERSION = "7.4" }

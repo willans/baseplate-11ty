@@ -73,7 +73,11 @@ module.exports = {
 			loose: 2,
 		},
 		transitionTimingFunction: easing,
-		zIndex,
+		zIndex: {
+			...zIndex,
+			0: 0,
+			'-1': -1,
+		},
 		extend: {
 			inset: (theme, { negative }) => ({
 				'1/2': '50%',
@@ -86,7 +90,6 @@ module.exports = {
 			},
 			padding: {
 				full: '100%',
-				logo: ratio(300, 87),
 				'9/16': ratio(16, 9),
 				'3/4': ratio(4, 3),
 				'4/3': ratio(3, 4),

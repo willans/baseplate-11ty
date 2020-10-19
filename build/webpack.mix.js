@@ -1,19 +1,17 @@
 const mix = require('laravel-mix');
 const ComponentFactory = require('laravel-mix/src/components/ComponentFactory');
 
-const { compiled, src } = require('./helpers');
 const { config: { browserSync, css, js }, paths } = require('./config');
 
 const postCssPlugins = [
-	require('postcss-units')(),
 	require('tailwindcss')('./build/tailwind.config.js'),
 ];
 
+// PurgeCSS
 if (mix.inProduction()) {
 	postCssPlugins.push(require('@fullhuman/postcss-purgecss')({
 		content: [
-			src('../views/**/*.*'),
-			src('js/components/**/*.vue'),
+			'./resources/**/*.vue',
 		],
 		// https://medium.com/@kyis/vue-tailwind-purgecss-the-right-way-c70d04461475
 		defaultExtractor: content => content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [],
@@ -22,12 +20,12 @@ if (mix.inProduction()) {
 	}));
 }
 
+// Load JavaScript linter support
 if (js.lint) {
-	// Load JavaScript linter support
 	new ComponentFactory().install(require('./mix-modules/ESLintLoader'));
 }
 
-// Typical setup
+// Build
 mix
 	.options({
 		autoprefixer: {
@@ -35,22 +33,14 @@ mix
 			enabled: true,
 		},
 		cleanCss: css.cleanCss,
-		fileLoaderDirs: {
-			fonts: `${paths.compiled}/fonts`,
-			images: `${paths.compiled}/img`,
-		},
 		processCssUrls: false,
 		postCss: postCssPlugins,
 		clearConsole: !(process.env.NO_CLI_FLUSH),
 	})
+	.js('resources/assets/js/app.js', 'js')
+	.sass('resources/assets/scss/app.scss', 'css/app.css')
 	.browserSync(browserSync)
 	.setPublicPath(paths.dest);
-
-css.files.forEach(filename => mix.sass(src(`scss/${filename}`), compiled('css')));
-js.files.forEach(filename => mix.js(src(`js/${filename}`), compiled('js')));
-
-// Uncomment if you want to separate vendor files.
-// mix.extract(js.extract);
 
 if (mix.inProduction()) {
 	mix.version();
