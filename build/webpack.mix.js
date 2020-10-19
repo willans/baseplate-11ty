@@ -37,8 +37,8 @@ mix
 		postCss: postCssPlugins,
 		clearConsole: !(process.env.NO_CLI_FLUSH),
 	})
-	.js('resources/assets/js/app.js', 'js')
-	.sass('resources/assets/scss/app.scss', 'css/app.css')
+	.js('resources/assets/js/app.js', 'compiled/js')
+	.sass('resources/assets/scss/app.scss', 'compiled/css/app.css')
 	.browserSync(browserSync)
 	.setPublicPath(paths.dest);
 
