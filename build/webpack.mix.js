@@ -11,7 +11,8 @@ const postCssPlugins = [
 if (mix.inProduction()) {
 	postCssPlugins.push(require('@fullhuman/postcss-purgecss')({
 		content: [
-			'./resources/**/*.vue',
+			'resources/assets/js/**/*.vue',
+			'resources/views/**/*.*',
 		],
 		// https://medium.com/@kyis/vue-tailwind-purgecss-the-right-way-c70d04461475
 		defaultExtractor: content => content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [],
