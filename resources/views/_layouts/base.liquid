@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ app.language }}">
+<head>
+	{% include ./partials/meta %}
+
+	{% include ./partials/tracking %}
+</head>
+<body>
+	{% include ./partials/tracking, body: true %}
+
+	{% include ./partials/accessibility-skip-links %}
+
+	{% include ./partials/outdated-browser %}
+
+	<div id="app" v-cloakx>
+		{{ content }}
+	</div>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features={{ app.polyfills | join: '%2C' }}"></script>
+	<script src="{% mix '/compiled/js/app.js' %}" async></script>
+</body>
+</html>

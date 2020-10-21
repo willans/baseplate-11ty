@@ -14,5 +14,5 @@ module.exports = {
 	tracking: {
 		gtm: 'xxx',
 	},
-	environment: process.env.ELEVENTY_ENV,
+	production: process.env.ELEVENTY_ENV === 'production',
 };
