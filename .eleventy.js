@@ -12,6 +12,15 @@ module.exports = (eleventyConfig) => {
 		}
 	});
 
+	eleventyConfig.addJavaScriptFunction('mix', (file) => {
+		try {
+			const json = require('./_site/mix-manifest.json');
+			return json[file];
+		} catch {
+			return file;
+		}
+	});
+
 	return {
 		dir: {
 			input: 'resources/views',
@@ -20,6 +29,5 @@ module.exports = (eleventyConfig) => {
 			layouts: '_layouts',
 			data: '_data',
 		},
-		env: process.env.NODE_ENV,
 	};
 };

@@ -1,17 +1,18 @@
----
-title: Baseplate
----
 <!doctype html>
-<html>
+<html lang="{{ app.language }}">
 <head>
-	<title>{{ title }}</title>
-	<link rel="stylesheet" href="{% mix '/compiled/css/app.css' %}">
+	{% include './partials/meta.njk' %}
 </head>
 <body>
-	<h1 class="e-h1">{{ title }}</h1>
+	{% include './partials/accessibility-skip-links.html' %}
 
-	-
+	{% include './partials/outdated-browser.html' %}
 
-	{{ content | safe }}
+	<div id="app" v-cloakx>
+		{{ content | safe }}
+	</div>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features={{ app.polyfills | join('%2C') }}"></script>
+	<script src="{% mix '/compiled/js/app.js' %}" async></script>
 </body>
 </html>

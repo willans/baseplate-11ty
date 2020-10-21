@@ -1,5 +1,6 @@
 ---
-layout: base.njk
-title: Hello world
+layout: page.njk
+title: Home
+description: Description
 ---
-{{ title }} - X
+Hello world

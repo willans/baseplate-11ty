@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="{{ app.themeColor }}">
+
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+
+<link rel="icon" type="image/png" href="/static/img/meta/favicon-32.png">
+<link rel="apple-touch-icon" href="/static/img/meta/favicon-180.png">
+
+<link rel="canonical" href="{{ page.url }}">
+
+<link rel="stylesheet" href="{% mix '/compiled/css/app.css' %}">
+
+<meta property="og:title" content="{{ meta.shareTitle }}">
+<meta property="og:description" content="{{ meta.shareDescription }}">
+<meta property="og:type" content="{{ meta.type }}">
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:site_name" content="{{ app.siteName }}">
+<meta property="og:image" content="{{ meta.socialImage }}">
+<meta name="twitter:card" content="summary_large_image">

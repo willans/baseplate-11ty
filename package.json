@@ -6,13 +6,13 @@
 		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=build/webpack.mix",
 		"dev": "npm-run-all clean dev:*",
 		"dev:webpack": "yarn run local",
-		"dev:11ty": "eleventy",
+		"dev:11ty": "ELEVENTY_ENV=development eleventy",
 		"watch": "npm-run-all clean --parallel watch:*",
 		"watch:webpack": "yarn run local --watch",
-		"watch:11ty": "eleventy --watch",
+		"watch:11ty": "ELEVENTY_ENV=development eleventy --watch",
 		"prod": "npm-run-all clean prod:*",
 		"prod:webpack": "yarn run production",
-		"prod:11ty": "eleventy"
+		"prod:11ty": "ELEVENTY_ENV=production eleventy"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^0.11.0",
