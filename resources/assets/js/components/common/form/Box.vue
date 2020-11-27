@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="flex items-start"
+		class="flex items-start e-p-body-small"
 		:disabled="$props.context.attributes.disabled"
 		:for="$props.context.id"
 	>
@@ -14,50 +14,41 @@
 			@blur="$data.hasKeyboardFocus = false"
 		>
 
-		<div
-			:class="[
-				'flex-shrink-0 w-5 mr-2 py-1px',
-				{
-					'shadow-focus': $data.hasKeyboardFocus,
-				},
-			]"
-		>
-			<placeholder class="my-1px pt-full">
-				<svg
-					class="w-full"
-					fill="none"
-					viewBox="0 0 40 40"
-					stroke="currentColor"
-					xmlns="http://www.w3.org/2000/svg"
-					stroke-width="4"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+		<div class="relative flex-shrink-0 w-8 mr-2">
+			&nbsp;
+
+			<placeholder
+				:class="[
+					'pt-full absolute top-1/2 left-0 w-full transform -translate-y-1/2',
+					{
+						'shadow-focus': $data.hasKeyboardFocus,
+					},
+				]"
+			>
+				<div
+					:class="[
+						'flex items-center justify-center border-1 border-grey-900',
+						// 'transition-colors duration-200 ease-out-cubic',
+						'bg-grey-100',
+						{
+							'rounded-full': $props.context.type === 'radio',
+							'bg-green': $props.context.hasValue,
+						},
+					]"
 				>
-					<path
-						v-if="$props.context.hasValue"
-						d="M 11.5 20 L 17.5 27 L 28.5 16"
+					<icon
+						:class="[
+							'transform transition-transform duration-200 ease-out-cubic',
+							$props.context.hasValue ? 'scale-90' : 'scale-0',
+						]"
+						name="check"
 					/>
-
-					<circle
-						v-if="$props.context.type === 'radio'"
-						cx="20"
-						cy="20"
-						r="18"
-					/>
-
-					<rect
-						v-else
-						x="2"
-						y="2"
-						width="36"
-						height="36"
-					/>
-				</svg>
+				</div>
 			</placeholder>
 		</div>
 
 		<span
-			class="leading-normal self-center"
+			class="self-center cursor-pointer"
 			aria-hidden="true"
 			v-html="$props.context.label"
 		/>

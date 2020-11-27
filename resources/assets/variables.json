@@ -67,8 +67,15 @@
 	"z-indexes": [
 		"accessibility-skip-links",
 		"outdated-browser",
-		"site-header",
-		"site-content",
-		"site-footer"
+		"10",
+		"9",
+		"8",
+		"7",
+		"6",
+		"5",
+		"4",
+		"3",
+		"2",
+		"1"
 	]
 }
