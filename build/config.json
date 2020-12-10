@@ -15,7 +15,7 @@
 			"notify": false,
 			"open": false,
 			"port": 5757,
-			"proxy": "baseplate-11ty.dev.com:80",
+			"proxy": "localhost:3001",
 			"snippetOptions": {
 				"rule": {
 					"match": "</body>"

@@ -1,3 +1,13 @@
+const options = {
+	dir: {
+		input: 'resources/views',
+		output: '_site',
+		includes: '_includes',
+		layouts: '_layouts',
+		data: '_data',
+	},
+};
+
 module.exports = (eleventyConfig) => {
 	// copy public assets to build folder
 	eleventyConfig.addPassthroughCopy({ 'resources/public': '.' });
@@ -21,13 +31,9 @@ module.exports = (eleventyConfig) => {
 		}
 	});
 
-	return {
-		dir: {
-			input: 'resources/views',
-			output: '_site',
-			includes: '_includes',
-			layouts: '_layouts',
-			data: '_data',
-		},
-	};
+	eleventyConfig.setBrowserSyncConfig({
+		port: 3001,
+	});
+
+	return options;
 };
