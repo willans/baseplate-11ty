@@ -2,16 +2,12 @@
 	<component
 		:is="cElement"
 		v-bind="$props.context.attributes"
-		:class="[
-			'relative',
-			'p-4',
-			'bg-red text-white',
-			'font-body text-base font-normal leading-none',
-			'no-underline',
-		]"
-		:href="$props.href"
-		v-html="$props.context.label || $props.text"
-	/>
+		class="e-button"
+	>
+		<slot>
+			<span v-text="$props.context.label || $props.title" />
+		</slot>
+	</component>
 </template>
 
 <script>
@@ -22,7 +18,7 @@
 				default: () => ({}),
 			},
 
-			text: {
+			title: {
 				type: String,
 				default: null,
 			},

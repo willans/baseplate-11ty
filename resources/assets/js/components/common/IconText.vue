@@ -1,11 +1,18 @@
 <template>
-	<div class="flex items-center">
-		<icon v-if="!iconAfter" :name="icon" />
+	<component
+		:is="cElement"
+		:class="[
+			'items-center space-x-3',
+			$props.inline ? 'inline-flex' : 'flex',
+			{
+				'flex-row-reverse space-x-reverse': $props.iconAfter,
+			},
+		]"
+	>
+		<icon class="flex-shrink-0" :name="icon" />
 
 		<span class="ml-1" v-html="text" />
-
-		<icon v-if="iconAfter" :name="icon" class="ml-1" />
-	</div>
+	</component>
 </template>
 
 <script>

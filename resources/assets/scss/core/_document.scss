@@ -8,11 +8,15 @@ body {
 }
 
 *:focus {
-	@apply outline-none;
+	@apply outline-none bg-grey-200;
 
-	[data-whatintent=keyboard] & {
-		@apply shadow-focus;
+	&:not(:focus-visible) {
+		@apply bg-transparent;
 	}
+}
+
+*:focus-visible {
+	@apply shadow-focus bg-transparent;
 }
 
 [disabled] {
