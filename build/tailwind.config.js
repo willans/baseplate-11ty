@@ -13,7 +13,8 @@ const colors = variables['colors'];
 
 const easing = mapValues(variables.easing, val => `cubic-bezier(${val[0]}, ${val[1]}, ${val[2]}, ${val[3]})`);
 
-const screens = mapValues(variables.breakpoints, px => relative(px, 'em'));
+const mqUnits = variables['em-media-queries'] ? 'em' : 'rem';
+const screens = mapValues(variables.breakpoints, px => relative(px, mqUnits));
 
 const c = variables.columns;
 const widths = mapKeys(mapValues(range(0, c), (v) => ratio(c, v + 1)), (v, k) => `${parseInt(k, 10) + 1}/${c}`);
@@ -21,18 +22,17 @@ const widths = mapKeys(mapValues(range(0, c), (v) => ratio(c, v + 1)), (v, k) =>
 const z = variables['z-indexes'];
 const zIndex = z.reduce((v, name, i) => ({ ...v, [name]: z.length - i }), {});
 
+const gridColumn = mapKeys(mapValues(range(13, c + 1), v => `span ${v} / span ${v}`), (v, k) => `span-${parseInt(k, 10) + 13}`);
+const gridColumnStart = mapKeys(mapValues(range(13, c + 1), v => String(v)), v => v);
+
 // tailwind settings
 module.exports = {
-	purge: false,
-	target: 'relaxed',
+	purge: [
+		'./resources/assets/js/**/*.vue',
+		'./resources/views/**/*.*',
+	],
 	theme: {
 		screens,
-		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
-			inherit: 'inherit',
-			...colors,
-		},
 		fontFamily: {
 			body: ['custom-body', 'Helvetica', 'sans-serif'],
 			heading: ['custom-heading', 'Georgia', 'serif'],
@@ -79,6 +79,17 @@ module.exports = {
 			'-1': -1,
 		},
 		extend: {
+			colors: {
+				// transparent: 'transparent',
+				// current: 'currentColor',
+				// inherit: 'inherit',
+				// ...colors,
+			},
+			gridColumn,
+			gridColumnStart,
+			gridTemplateColumns: {
+				24: 'repeat(24, minmax(0, 1fr))',
+			},
 			inset: (theme, { negative }) => ({
 				'1/2': '50%',
 				...widths,

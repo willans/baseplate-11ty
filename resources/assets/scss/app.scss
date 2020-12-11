@@ -2,18 +2,20 @@
 
 @tailwind components;
 
-@import 'utility/functions';
-@import 'utility/mixins';
-@import 'utility/fonts';
+@layer components {
+	@import 'utility/functions';
+	@import 'utility/mixins';
+	@import 'utility/fonts';
 
-@import 'core/document';
-@import 'core/typography';
-@import 'core/anchor';
-@import 'core/button';
-@import 'core/input';
+	@import 'core/document';
+	@import 'core/typography';
+	@import 'core/anchor';
+	@import 'core/button';
+	@import 'core/input';
 
-@import 'block/container';
-@import 'block/copy';
-@import 'block/placeholder';
+	@import 'block/container';
+	@import 'block/copy';
+	@import 'block/placeholder';
+}
 
 @tailwind utilities;

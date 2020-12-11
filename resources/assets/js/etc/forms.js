@@ -37,7 +37,7 @@ Vue.use(VueFormulate, {
 				case 'group':
 					return null;
 				default:
-					return 'e-input block w-full p-4 bg-white border border-grey-500 rounded-none text-black focus:border-grey-700';
+					return 'e-input block w-full p-4 bg-white border border-gray-500 rounded-none text-black focus:border-gray-700';
 			}
 		},
 		label: ({ classification }) => {
@@ -50,7 +50,7 @@ Vue.use(VueFormulate, {
 		},
 		help: 'text-sm mt-1/2em text-gray-600',
 		errors: '',
-		error: 'block relative mt-1/2em text-red italic text-sm leading-snug',
+		error: 'block relative mt-1/2em text-black italic text-sm leading-snug',
 		decorator: 'bg-green',
 	},
 });

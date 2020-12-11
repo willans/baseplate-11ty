@@ -4,12 +4,22 @@ export default {
 			type: String,
 			default: null,
 		},
+
+		schema: {
+			type: Array,
+			default() {},
+		},
+
+		values: {
+			type: Object,
+			default() {},
+		},
 	},
 
 	data() {
 		return {
 			errors: {},
-			form: {},
+			form: this.$props.values || {},
 			loading: false,
 			response: null,
 		};
@@ -21,7 +31,7 @@ export default {
 
 			const body = new FormData();
 
-			body.append('CRAFT_CSRF_TOKEN', window.app.csrf);
+			// body.append('CRAFT_CSRF_TOKEN', window.app.csrf);
 			Object.keys(this.$data.form).forEach(key => body.append(key, this.$data.form[key]));
 
 			try {

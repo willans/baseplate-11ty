@@ -1,6 +1,6 @@
 <template>
 	<label
-		class="flex items-start e-p-body-small"
+		class="relative flex items-start e-p-body-small"
 		:disabled="$props.context.attributes.disabled"
 		:for="$props.context.id"
 	>
@@ -10,26 +10,18 @@
 			:value="$props.context.value"
 			:type="$props.context.type"
 			class="sr-only"
-			@focus="$data.hasKeyboardFocus = isKeyboard()"
-			@blur="$data.hasKeyboardFocus = false"
 		>
 
-		<div class="relative flex-shrink-0 w-8 mr-2">
+		<span class="x-focus-sibling absolute top-0 left-0 z-1 w-8 h-8 pointer-events-none" />
+
+		<div class="relative flex-shrink-0 w-8 h-8 mr-2">
 			&nbsp;
 
-			<placeholder
-				:class="[
-					'pt-full absolute top-1/2 left-0 w-full transform -translate-y-1/2',
-					{
-						'shadow-focus': $data.hasKeyboardFocus,
-					},
-				]"
-			>
+			<placeholder class="pt-full absolute top-1/2 left-0 w-full transform -translate-y-1/2">
 				<div
 					:class="[
-						'flex items-center justify-center border-1 border-grey-900',
-						// 'transition-colors duration-200 ease-out-cubic',
-						'bg-grey-100',
+						'flex items-center justify-center border-1 border-gray-900',
+						'bg-gray-100',
 						{
 							'rounded-full': $props.context.type === 'radio',
 							'bg-green': $props.context.hasValue,
@@ -56,11 +48,7 @@
 </template>
 
 <script>
-	import Input from '../../../mixins/input';
-
 	export default {
-		mixins: [Input],
-
 		props: {
 			context: {
 				type: Object,

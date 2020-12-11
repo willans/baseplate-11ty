@@ -8,11 +8,11 @@ module.exports = {
 		'IntersectionObserver',
 		'Promise',
 	],
-	language: 'en',
+	language: 'en-GB',
 	siteName: 'Baseplate',
 	themeColor: '#ff585d',
 	tracking: {
 		gtm: 'xxx',
 	},
-	production: process.env.ELEVENTY_ENV === 'production',
+	production: process.env.NODE_ENV === 'production',
 };

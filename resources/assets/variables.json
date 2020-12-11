@@ -1,19 +1,18 @@
 {
+	"em-media-queries": true,
 	"browser-default-font-size": 16,
 	"breakpoints": {
 		"xs": 375,
 		"sm": 560,
 		"md": 768,
 		"lg": 1024,
-		"xl": 1248
+		"xl": 1248,
+		"2xl": 1440
 	},
 	"colors": {
-		"brand": {
-			"red": "#ff585d"
-		},
 		"black": "#000",
 		"white": "#fff",
-		"grey": {
+		"gray": {
 			"100": "#fafafa",
 			"200": "#eee",
 			"300": "#ddd",

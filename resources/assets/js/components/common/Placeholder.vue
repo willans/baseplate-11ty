@@ -1,5 +1,5 @@
 <template>
-	<div class="e-placeholder">
+	<div class="x-placeholder">
 		<slot />
 	</div>
 </template>

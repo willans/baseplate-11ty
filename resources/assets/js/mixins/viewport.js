@@ -3,7 +3,6 @@ import variables from '../../variables.json';
 
 const breakpoints = {};
 
-// TODO: convert to Object.fromEntries
 Object.keys(variables.breakpoints).forEach((name) => {
 	let value = variables.breakpoints[name];
 

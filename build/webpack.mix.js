@@ -4,22 +4,8 @@ const ComponentFactory = require('laravel-mix/src/components/ComponentFactory');
 const { config: { browserSync, css, js }, paths } = require('./config');
 
 const postCssPlugins = [
-	require('tailwindcss')('./build/tailwind.config.js'),
+	require('@tailwindcss/postcss7-compat')('./build/tailwind.config.js'),
 ];
-
-// PurgeCSS
-if (mix.inProduction()) {
-	postCssPlugins.push(require('@fullhuman/postcss-purgecss')({
-		content: [
-			'resources/assets/js/**/*.vue',
-			'resources/views/**/*.*',
-		],
-		// https://medium.com/@kyis/vue-tailwind-purgecss-the-right-way-c70d04461475
-		defaultExtractor: content => content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [],
-		whitelist: css.purgeCssWhitelist,
-		whitelistPatterns: css.purgeCssWhitelistPatterns.map(element => new RegExp(element)),
-	}));
-}
 
 // Load JavaScript linter support
 if (js.lint) {

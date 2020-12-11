@@ -8,15 +8,27 @@ body {
 }
 
 *:focus {
-	@apply outline-none bg-grey-200;
+	@apply outline-none bg-gray-200;
+
+	~ .x-focus-sibling {
+		@apply bg-gray-200;
+	}
 
 	&:not(:focus-visible) {
 		@apply bg-transparent;
+
+		~ .x-focus-sibling {
+			@apply bg-transparent;
+		}
 	}
 }
 
 *:focus-visible {
 	@apply shadow-focus bg-transparent;
+
+	~ .x-focus-sibling {
+		@apply shadow-focus bg-transparent;
+	}
 }
 
 [disabled] {
