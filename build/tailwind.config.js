@@ -32,16 +32,15 @@ module.exports = {
 		'./resources/views/**/*.*',
 	],
 	theme: {
-		screens,
-		fontFamily: {
-			body: ['custom-body', 'Helvetica', 'sans-serif'],
-			heading: ['custom-heading', 'Georgia', 'serif'],
-			system: ['system-ui', 'sans-serif'],
-		},
 		boxShadow: {
 			none: 'none',
 			focus: `0 0 5px ${colors.blue}`,
 			outline: `0 0 3px ${colors.blue}, 0 0 6px ${colors.blue}, 0 0 9px ${colors.blue}`,
+		},
+		fontFamily: {
+			body: ['custom-body', 'Helvetica', 'sans-serif'],
+			heading: ['custom-heading', 'Georgia', 'serif'],
+			system: ['system-ui', 'sans-serif'],
 		},
 		fontSize: {
 			xs: relative(12),
@@ -67,11 +66,12 @@ module.exports = {
 		lineHeight: {
 			none: 1,
 			tight: 1.1,
-			snug: 1.2,
+			snug: 1.25,
 			normal: 1.5,
 			relaxed: 1.75,
 			loose: 2,
 		},
+		screens,
 		transitionTimingFunction: easing,
 		zIndex: {
 			...zIndex,
@@ -80,10 +80,7 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				// transparent: 'transparent',
-				// current: 'currentColor',
-				// inherit: 'inherit',
-				// ...colors,
+				inherit: 'inherit',
 			},
 			gridColumn,
 			gridColumnStart,
