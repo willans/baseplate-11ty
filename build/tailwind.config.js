@@ -9,8 +9,6 @@ const letterSpacing = value => `${value / 1000}em`;
 const ratio = (x, y) => `${y / x * 100}%`;
 
 // values
-const colors = variables['colors'];
-
 const easing = mapValues(variables.easing, val => `cubic-bezier(${val[0]}, ${val[1]}, ${val[2]}, ${val[3]})`);
 
 const mqUnits = variables['em-media-queries'] ? 'em' : 'rem';
@@ -32,11 +30,6 @@ module.exports = {
 		'./resources/views/**/*.*',
 	],
 	theme: {
-		boxShadow: {
-			none: 'none',
-			focus: `0 0 5px ${colors.blue}`,
-			outline: `0 0 3px ${colors.blue}, 0 0 6px ${colors.blue}, 0 0 9px ${colors.blue}`,
-		},
 		fontFamily: {
 			body: ['custom-body', 'Helvetica', 'sans-serif'],
 			heading: ['custom-heading', 'Georgia', 'serif'],
@@ -79,6 +72,9 @@ module.exports = {
 			'-1': -1,
 		},
 		extend: {
+			boxShadow: theme => ({
+				focus: `0 0 5px ${theme('colors.blue')}`
+			}),
 			colors: {
 				inherit: 'inherit',
 			},

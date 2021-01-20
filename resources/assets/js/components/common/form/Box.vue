@@ -12,8 +12,6 @@
 			class="sr-only"
 		>
 
-		<span class="x-focus-sibling absolute top-0 left-0 z-1 w-8 h-8 pointer-events-none" />
-
 		<div class="relative flex-shrink-0 w-8 h-8 mr-2">
 			&nbsp;
 
@@ -44,6 +42,8 @@
 			aria-hidden="true"
 			v-html="$props.context.label"
 		/>
+
+		<span class="x-focus-sibling absolute top-0 left-0 z-1 w-8 h-8 pointer-events-none" />
 	</label>
 </template>
 

@@ -7,27 +7,27 @@ body {
 	@apply bg-white text-black font-body text-base leading-normal;
 }
 
-*:focus {
-	@apply outline-none bg-gray-200;
+:focus {
+	@apply shadow-focus outline-none;
 
 	~ .x-focus-sibling {
-		@apply bg-gray-200;
+		@apply shadow-focus;
 	}
 
 	&:not(:focus-visible) {
-		@apply bg-transparent;
+		@apply shadow-none;
 
 		~ .x-focus-sibling {
-			@apply bg-transparent;
+			@apply shadow-none;
 		}
 	}
 }
 
-*:focus-visible {
-	@apply shadow-focus bg-transparent;
+:focus-visible {
+	@apply shadow-focus;
 
 	~ .x-focus-sibling {
-		@apply shadow-focus bg-transparent;
+		@apply shadow-focus;
 	}
 }
 
