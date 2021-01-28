@@ -18,8 +18,8 @@
 			<placeholder class="pt-full absolute top-1/2 left-0 w-full transform -translate-y-1/2">
 				<div
 					:class="[
-						'flex items-center justify-center border-1 border-gray-900',
-						'bg-gray-100',
+						'flex items-center justify-center border-1 border-grey-900',
+						'bg-grey-100',
 						{
 							'rounded-full': $props.context.type === 'radio',
 							'bg-green': $props.context.hasValue,

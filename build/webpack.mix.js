@@ -29,6 +29,16 @@ mix
 	.browserSync(browserSync)
 	.setPublicPath(paths.dest);
 
+// const combined = [];
+
+// css.files.forEach((filename) => {
+// 	const compiled = `compiled/temp/${filename.replace('scss', 'css')}`;
+// 	mix.sass(`resources/assets/scss/${filename}`, compiled);
+// 	combined.push(`${paths.dest}/${compiled}`);
+// });
+
+// mix.combine(combined, `${paths.dest}/compiled/css/app.css`);
+
 if (mix.inProduction()) {
 	mix.version();
 } else {

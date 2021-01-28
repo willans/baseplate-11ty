@@ -5,7 +5,7 @@
 		<div class="mt-4">
 			<div
 				v-observe-visibility="cObserverOptions"
-				class="relative bg-gray-100 border"
+				class="relative bg-grey-100 border"
 			>
 				<iframe
 					v-if="$data.iframeActive"
@@ -21,7 +21,7 @@
 					@click="loadIframe"
 				>
 					<icon
-						class="block text-5xl text-gray-500"
+						class="block text-5xl text-grey-500"
 						:name="cLoadIcon"
 					/>
 				</button>
@@ -30,7 +30,7 @@
 					<ul class="flex leading-none">
 						<li v-if="$props.component">
 							<button
-								class="p-1 leading-none text-gray-500 hover:text-accent focus:outline-none"
+								class="p-1 leading-none text-grey-500 hover:text-accent focus:outline-none"
 								@click="$data.showCode = !$data.showCode"
 							>
 								<icon name="code" />
@@ -39,7 +39,7 @@
 
 						<li>
 							<a
-								class="block p-1 leading-none text-gray-500 hover:text-accent"
+								class="block p-1 leading-none text-grey-500 hover:text-accent"
 								:href="cUrl"
 							>
 								<icon class="external" name="external" />
@@ -56,7 +56,7 @@
 			>
 				<pre><code
 					ref="code"
-					class="p-4 text-sm font-mono bg-gray-200 lang-html"
+					class="p-4 text-sm font-mono bg-grey-200 lang-html"
 					v-text="cCode"
 				/></pre>
 			</div>

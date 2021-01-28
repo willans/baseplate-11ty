@@ -1,6 +1,7 @@
 const mapKeys = require('lodash/mapKeys');
 const mapValues = require('lodash/mapValues');
 const range = require('lodash/range');
+const twColors = require('@tailwindcss/postcss7-compat/colors');
 const variables = require('../resources/assets/variables.json');
 
 // converters and calculators
@@ -73,10 +74,12 @@ module.exports = {
 		},
 		extend: {
 			boxShadow: theme => ({
-				focus: `0 0 5px ${theme('colors.blue')}`
+				focus: `0 0 5px ${theme('colors.blue.500')}`,
 			}),
 			colors: {
 				inherit: 'inherit',
+				gray: false,
+				grey: twColors.warmGray,
 			},
 			gridColumn,
 			gridColumnStart,
