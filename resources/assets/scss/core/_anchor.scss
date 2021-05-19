@@ -1,7 +1,0 @@
-a {
-	@apply text-blue-600 cursor-pointer underline;
-
-	&:hover {
-		@apply no-underline;
-	}
-}

@@ -1,0 +1,9 @@
+.x-fade-enter-active,
+.x-fade-leave-active {
+	@apply transition-opacity duration-300 ease-out-cubic;
+}
+
+.x-fade-enter,
+.x-fade-leave-to {
+	@apply opacity-0;
+}

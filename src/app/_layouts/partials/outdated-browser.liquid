@@ -1,0 +1,17 @@
+<div id="outdated-browser" class="absolute z-40 antialiased top-0 inset-x-0 p-6 bg-red-500 text-white text-center text-base" aria-hidden="true" style="display: none;">
+	You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/" class="text-inherit underline">upgrade your browser</a> to improve your viewing experience.
+</div>
+
+<script>
+	function msieversion() {
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf('MSIE ');
+		var $element = document.getElementById('outdated-browser');
+
+		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+			$element.removeAttribute('style');
+		}
+	}
+
+	msieversion();
+</script>

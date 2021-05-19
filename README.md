@@ -1,8 +1,9 @@
-```bash
-# install packages
-yarn install
+# baseplate-eleventy
 
-# compile assets with Laravel Mix
-# options: dev, watch, prod
-yarn run dev
-```
+## install
+`npm install`
+
+## compile
+options: dev, watch, prod
+
+`npm run dev`

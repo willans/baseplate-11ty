@@ -1,6 +1,10 @@
+node_modules
+web_modules
 _site
-/node_modules
-/vendor
-npm-debug.log
-yarn-error.log
-*.DS_Store
+dist
+.env
+*.log
+report.html
+.DS_Store
+.tool-versions
+.netlify

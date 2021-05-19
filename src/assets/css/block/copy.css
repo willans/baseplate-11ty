@@ -1,0 +1,50 @@
+.x-copy {
+	@apply max-w-prose;
+
+	> * {
+		@apply mt-em;
+
+		&:first-child {
+			@apply mt-0;
+		}
+	}
+
+	h2,
+	h3,
+	h4 {
+		@apply font-bold font-heading leading-none;
+	}
+
+	h2 {
+		@apply text-3xl md:text-4xl xl:text-5xl;
+	}
+
+	h3 {
+		@apply text-2xl md:text-3xl xl:text-4xl;
+	}
+
+	h4 {
+		@apply text-xl md:text-2xl xl:text-3xl;
+	}
+
+	ol,
+	ul {
+		@apply mx-5;
+
+		> li {
+			@apply mt-em;
+
+			&:first-child {
+				@apply mt-0;
+			}
+		}
+	}
+
+	ol {
+		@apply list-decimal;
+	}
+
+	ul {
+		@apply list-disc;
+	}
+}
