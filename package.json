@@ -9,26 +9,26 @@
         "watch": "npm-run-all clean --parallel watch:*",
         "watch:webpack": "npm run development watch",
         "watch:11ty": "ELEVENTY_ENV=development eleventy --serve",
-        "prod": "npm-run-all clean prod:*",
-        "prod:webpack": "npm run production",
-        "prod:11ty": "ELEVENTY_ENV=production eleventy"
+        "build": "npm-run-all clean build:*",
+        "build:webpack": "npm run production",
+        "build:11ty": "ELEVENTY_ENV=production eleventy"
     },
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
-        "@vue/compiler-sfc": "^3.1.5",
-        "autoprefixer": "^10.3.1",
+        "@vue/compiler-sfc": "^3.2.6",
+        "autoprefixer": "^10.3.3",
         "cross-env": "^7.0.3",
-        "eslint": "^7.31.0",
-        "eslint-plugin-vue": "^7.14.0",
+        "eslint": "^7.32.0",
+        "eslint-plugin-vue": "^7.17.0",
         "eslint-webpack-plugin": "^3.0.1",
-        "laravel-mix": "^6.0.27",
+        "laravel-mix": "^6.0.28",
         "laravel-mix-eslint": "^0.2.0",
         "npm-run-all": "^4.1.5",
         "postcss-import": "^14.0.2",
         "postcss-nested": "^5.0.6",
         "rimraf": "^3.0.2",
-        "tailwindcss": "^2.2.7",
+        "tailwindcss": "^2.2.8",
         "vue": "^3.0.11",
-        "vue-loader": "^16.2.0"
+        "vue-loader": "^15.9.8"
     }
 }

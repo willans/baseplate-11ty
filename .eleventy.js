@@ -34,9 +34,6 @@ module.exports = (eleventyConfig) => {
 			// '_site/*.html',
 			'!**/*.map',
 		],
-	});
-
-	eleventyConfig.setBrowserSyncConfig({
 		port: 3001,
 	});
 
