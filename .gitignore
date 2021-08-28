@@ -8,3 +8,4 @@ report.html
 .DS_Store
 .tool-versions
 .netlify
+.cache
