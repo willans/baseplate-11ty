@@ -29,8 +29,8 @@
         "postcss-nested": "^5.0.6",
         "rimraf": "^3.0.2",
         "tailwindcss": "^2.2.8",
-        "vue": "^3.0.11",
-        "vue-loader": "^15.9.8"
+        "vue": "^3.2.6",
+        "vue-loader": "^16.5.0"
     },
     "dependencies": {}
 }

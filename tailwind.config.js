@@ -1,6 +1,3 @@
-const mapKeys = require('lodash/mapKeys');
-const mapValues = require('lodash/mapValues');
-const range = require('lodash/range');
 const variables = require('./src/assets/variables.json');
 
 // converters and calculators
@@ -8,43 +5,20 @@ const letterSpacing = value => `${value / 1000}em`;
 const relative = (px, unit = 'rem', base = variables['browser-default-font-size']) => `${px / base}${unit}`;
 const ratio = (x, y) => `${y / x * 100}%`;
 
-// values
-const transitionTimingFunction = mapValues(variables.easing, val => `cubic-bezier(${val[0]}, ${val[1]}, ${val[2]}, ${val[3]})`);
-
-const screens = mapValues(variables.breakpoints, px => relative(px, 'em'));
-
-const c = variables.columns;
-const width = mapKeys(mapValues(range(0, c), (v) => ratio(c, v + 1)), (v, k) => `${parseInt(k, 10) + 1}/${c}`);
-
 // tailwind settings
 module.exports = {
 	mode: 'jit',
 	purge: {
 		content: [
-			'./src/assets/purge-safelist.txt',
 			'./src/app/**/*.liquid',
+			'./src/assets/purge-safelist.txt',
+			'./src/assets/**/*.{js,vue}',
 		],
-		// options: {
-		// 	// see purge-safelist.txt
-		// 	safelist: [
-		// 		'example',
-		// 		/-(leave|enter|appear)(|-(to|from|active))$/,
-		// 	],
-		// },
 	},
 	theme: {
-		screens,
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: relative(15),
-				sm: relative(20),
-				md: relative(30),
-				lg: relative(40),
-				xl: relative(50),
-				'2xl': relative(60),
-			},
-		},
+		screens: Object.fromEntries(
+			Object.entries(variables.breakpoints).map(([name, px]) => [name, relative(px, 'em')])
+		),
 		fontFamily: {
 			body: ['ff-custom-body', 'Helvetica', 'sans-serif'],
 			heading: ['ff-custom-heading', 'Georgia', 'serif'],
@@ -71,11 +45,12 @@ module.exports = {
 				'hvr': { raw: '(hover: hover)' },
 			},
 			colors: {
+				focus: '#3b82f6',
 				inherit: 'inherit',
 			},
 			inset: (theme, { negative }) => ({
-				...width,
-				...(negative(width)),
+				...theme('width'),
+				...(negative(theme('width'))),
 			}),
 			lineHeight: {
 				'extra-tight': 1.1,
@@ -91,8 +66,13 @@ module.exports = {
 				em: '1em',
 				'1/2em': '.5em',
 			},
-			transitionTimingFunction,
-			width,
+			transitionTimingFunction: Object.fromEntries(
+				Object.entries(variables.easing).map(([name, v]) => [name, `cubic-bezier(${v.join(', ')})`])
+			),
+			width: Object.fromEntries([...Array(variables.columns).keys()].map(v => [
+				`${v + 1}/${variables.columns}`,
+				`${(v + 1) / variables.columns * 100}%`
+			])),
 			zIndex: {
 				'-1': -1,
 				1: 1,
@@ -101,5 +81,35 @@ module.exports = {
 		},
 	},
 	variants: {},
-	corePlugins: {},
+	corePlugins: {
+		container: false,
+	},
+	plugins: [
+		({ addComponents, theme }) => {
+			const baseStyles = {
+				marginInline: 'auto',
+				paddingInline: theme('spacing.5'),
+				width: `clamp(${theme('screens.sm')}, 100%, ${theme('maxWidth.container')})`,
+			};
+
+			const breakpointSetStyles = {
+				'@screen md': {
+					paddingInline: theme('spacing.8'),
+				},
+				'@screen xl': {
+					paddingInline: theme('spacing.12'),
+				},
+			};
+
+			const breakpoints = Object.fromEntries(
+				Object.entries(variables.breakpoints).map(([name, px]) => [`@screen ${name}`, {
+					'width': `clamp(${relative(px)}, 100%, ${relative(px + variables.breapointsRange)})`,
+				}])
+			);
+
+			addComponents({
+				'.container': Object.assign(baseStyles, Object.assign(...Object.keys(breakpoints).map(k => ({[k]: {...breakpoints[k], ...breakpointSetStyles[k]}})))),
+			});
+		},
+	],
 };
