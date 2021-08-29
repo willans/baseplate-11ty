@@ -1,12 +1,8 @@
 .x-copy {
 	@apply max-w-prose;
 
-	> * {
+	> *:not(:first-child) {
 		@apply mt-em;
-
-		&:first-child {
-			@apply mt-0;
-		}
 	}
 
 	h2,
@@ -31,12 +27,8 @@
 	ul {
 		@apply mx-5;
 
-		> li {
+		> li:not(:first-child) {
 			@apply mt-em;
-
-			&:first-child {
-				@apply mt-0;
-			}
 		}
 	}
 
